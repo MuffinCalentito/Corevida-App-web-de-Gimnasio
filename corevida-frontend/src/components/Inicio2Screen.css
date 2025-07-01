@@ -1,0 +1,105 @@
+.inicio2-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/src/assets/fondo5.jpeg);
+  background-size: cover;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+.inicio2-overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.inicio2-content {
+  max-width: 500px;
+  width: 100%;
+}
+
+.imc-title {
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.imc-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.imc-category {
+  background-color: #2E7D32;
+  color: #c8e6c9;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #2E7D32;
+}
+
+.imc-category.active {
+  background-color: #66BB6A;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(102, 187, 106, 0.7);
+}
+
+.recommendation-text {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+  background-color: #2E7D32;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #a5d6a7;
+  border: 2px solid #2E7D32;
+}

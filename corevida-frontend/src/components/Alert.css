@@ -1,0 +1,60 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.alert-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 500px;
+  color: white;
+  font-weight: 600;
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.alert-container.error {
+  background-color: #d9534f;
+  border: 1px solid #d43f3a;
+}
+
+.alert-container.success {
+  background-color: #008f39;
+  border: 1px solid #006428;
+}
+
+.alert-message {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.alert-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0;
+  line-height: 1;
+}
+
+.alert-close-btn:hover {
+  opacity: 1;
+}
