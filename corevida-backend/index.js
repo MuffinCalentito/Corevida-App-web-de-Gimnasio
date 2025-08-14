@@ -16,6 +16,9 @@ const PORT = 3001;
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // --- MIDDLEWARES GENERALES ---

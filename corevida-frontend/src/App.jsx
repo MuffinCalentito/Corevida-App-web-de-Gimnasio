@@ -12,18 +12,6 @@ import Inicio4Screen from './components/Inicio4Screen.jsx';
 import RutinaScreen from './components/RutinaScreen.jsx';
 
 function App() {
-  useEffect(() => {
-    // La función 'hide' de Voiceflow oculta el ícono del chat
-    // Usamos un temporizador para darle tiempo al script de Voiceflow de cargarse
-    const timer = setTimeout(() => {
-      if (window.voiceflow?.chat) {
-        window.voiceflow.chat.hide();
-      }
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
 
   return (
     <BrowserRouter>

@@ -1,100 +1,84 @@
-Corevida - Aplicación de Rutinas de Gimnasio Personalizadas
-Descripción:
-Corevida es una aplicación web full-stack diseñada para usuarios de gimnasio que buscan una experiencia de entrenamiento personalizada. La plataforma permite a los usuarios registrarse, iniciar sesión y configurar sus preferencias de entrenamiento (días por semana y duración de la sesión). En base a estos datos, la aplicación genera automáticamente una rutina de ejercicios única y aleatoria, la cual se guarda en el perfil del usuario para futuras consultas.
+# Corevida - Aplicación de Rutinas de Gimnasio Personalizadas
 
-La aplicación cuenta con un sistema de autenticación seguro, una interfaz de usuario interactiva construida con React, y un backend robusto que maneja toda la lógica de negocio y la comunicación con la base de datos. Además, se integra un chatbot de asistencia en la pantalla de la rutina para mejorar la experiencia del usuario.
+## Descripción
+Corevida es una aplicación web full-stack diseñada para usuarios de gimnasio que buscan una experiencia de entrenamiento personalizada.  
+La plataforma permite a los usuarios registrarse, iniciar sesión y configurar sus preferencias de entrenamiento (días por semana y duración de la sesión).  
+En base a estos datos, la aplicación genera automáticamente una rutina de ejercicios única y aleatoria, la cual se guarda en el perfil del usuario para futuras consultas.
 
-Características Principales:
-Autenticación de Usuarios: Sistema completo de registro e inicio de sesión con tokens de seguridad (JWT).
+Cuenta con un sistema de autenticación seguro, una interfaz de usuario interactiva construida con React, y un backend robusto que maneja toda la lógica de negocio y la comunicación con la base de datos.  
+Además, se integra un chatbot de asistencia en la pantalla de la rutina para mejorar la experiencia del usuario.
 
-Contraseñas Seguras: Almacenamiento de contraseñas utilizando hashing con bcrypt.
+---
 
-Flujo de Configuración Inicial: Proceso guiado para que los nuevos usuarios establezcan sus datos y preferencias de entrenamiento.
+## Características Principales
+- **Autenticación de Usuarios:** Registro e inicio de sesión con tokens JWT.
+- **Contraseñas Seguras:** Hashing con bcrypt.
+- **Flujo de Configuración Inicial:** Para establecer preferencias de entrenamiento.
+- **Navegación Condicional:** Redirección inteligente según el estado de configuración.
+- **Generación de Rutinas Dinámicas:** Algoritmo que crea rutinas de 3, 4 o 6 días.
+- **Persistencia de Datos:** Rutinas guardadas en PostgreSQL.
+- **Visor de Rutinas Interactivo:** Carrusel de días y grupos musculares.
+- **Sistema de Alertas Personalizado:** Notificaciones estilizadas.
+- **Chatbot Integrado:** Asistente virtual con Voiceflow.
 
-Navegación Condicional: La aplicación redirige inteligentemente a los usuarios a la pantalla de configuración o a su rutina guardada, dependiendo de si ya han completado el proceso inicial.
+---
 
-Generación de Rutinas Dinámicas: Un algoritmo en el backend crea rutinas de 3, 4 o 6 días, seleccionando ejercicios de forma aleatoria desde la base de datos según las reglas establecidas.
+## Stack Tecnológico
 
-Persistencia de Datos: Las rutinas generadas se guardan en la base de datos PostgreSQL, asegurando que el usuario siempre vea la misma rutina hasta que decida reconfigurarla.
+### Frontend (Cliente)
+- React
+- Vite
+- React Router DOM
+- Axios
+- React-iMask
+- CSS personalizado
 
-Visor de Rutinas Interactivo: Interfaz para navegar por los días de la semana y los grupos musculares de cada día con un carrusel.
+### Backend (Servidor)
+- Node.js
+- Express.js
+- PostgreSQL
+- jsonwebtoken (JWT)
+- bcrypt
+- pg (node-postgres)
+- cors
+- dotenv
 
-Sistema de Alertas Personalizado: Notificaciones no intrusivas y estilizadas que mejoran la experiencia de usuario.
+### Base de Datos y Servicios
+- Railway (Base de datos PostgreSQL)
+- Voiceflow (Chatbot)
 
-Chatbot Integrado: Asistente virtual de Voiceflow disponible exclusivamente en la pantalla de la rutina.
+---
 
-Stack Tecnológico:
-Frontend (Cliente):
-React: Biblioteca principal para construir la interfaz de usuario.
+## Instalación y Ejecución
 
-Vite: Herramienta de construcción y entorno de desarrollo.
+### Prerrequisitos
+- Node.js (v16 o superior)
+- npm (incluido con Node.js)
+- Base de datos PostgreSQL (local, Railway, Neon u otras)
 
-React Router DOM: Para la gestión de rutas en la aplicación.
+---
 
-Axios: Para realizar peticiones HTTP al backend.
-
-React-iMask: Para la máscara de entrada en el campo de fecha.
-
-CSS Personalizado: Para el diseño y la maquetación de la aplicación.
-
-Backend (Servidor):
-Node.js: Entorno de ejecución para JavaScript en el servidor.
-
-Express.js: Framework para construir la API REST.
-
-PostgreSQL: Sistema de gestión de base de datos relacional.
-
-jsonwebtoken (JWT): Para la creación y verificación de tokens de sesión.
-
-bcrypt: Para el hasheo seguro de contraseñas.
-
-pg (node-postgres): Driver para la conexión entre Node.js y PostgreSQL.
-
-cors: Middleware para habilitar el intercambio de recursos de origen cruzado.
-
-dotenv: Para la gestión de variables de entorno.
-
-Base de Datos y Servicios
-Railway: Plataforma en la nube para el alojamiento de la base de datos PostgreSQL.
-
-Voiceflow: Servicio para la creación e integración del chatbot.
-
-Instalación y ejecución:
-Sigue estos pasos para correr el proyecto en tu máquina local.
-
-Prerrequisitos
--Tener instalado Node.js (versión 16 o superior).
-
--Tener instalado npm (se instala automáticamente con Node.js).
-
--Tener acceso a una base de datos PostgreSQL (puedes usar una local o la de Railway).
-
-Pasos:
-1- Clonar el repositorio:
+### 1. Clonar el repositorio
+```bash
 git clone https://github.com/MuffinCalentito/Corevida-App-web-de-Gimnasio.git
 cd Corevida-App-web-de-Gimnasio
 
-2- Configurar el backend:
-Navega a la carpeta del backend: cd corevida-backend
+cd corevida-backend
+npm install
+cp .env.example .env
 
-Instala las dependencias: npm install
-
-Crea una copia del archivo de ejemplo para las variables de entorno: cp .env.example .env
-
-Abre el nuevo archivo .env y rellena las variables con tus propios datos (la URL de tu base de datos de Railway y una clave secreta para JWT).
+Dentro del archivo .env colocar su base de datos y una clave:
 DATABASE_URL="postgresql://USUARIO:CONTRASEÑA@HOST:PUERTO/BASEDEDATOS"
 JWT_SECRET="UNA_CLAVE_SECRETA_MUY_FUERTE_Y_ALEATORIA"
 
-3- Configura el frontend:
-Vuelve a la carpeta raíz y navega a la del frontend: cd ../corevida-frontend
 
-Instala las dependencias: npm install
+cd ../corevida-frontend
+npm install
+
 
 4- Prepara la Base de Datos:
 
-Asegúrate de que tu base de datos esté activa.
-
-Ejecuta estos scripts para crear las tablas:
+Crear las tablas en tu base de datos con los siguientes scripts:
 CREATE TABLE usuarios (
     id SERIAL PRIMARY KEY,
     nombre_usuario VARCHAR(50) NOT NULL,
@@ -178,12 +162,11 @@ INSERT INTO ejercicios (nombre, musculo_id, imagen) VALUES
 ('Aperturas en máquina', 5, 'https://eresfitness.com/wp-content/uploads/2019/11/Aperturas-peck-deck-de-pecho.jpg.webp'),
 ('Crossover en polea', 5, 'https://eresfitness.com/wp-content/uploads/2019/06/Cruces-en-polea-alta-o-crossover-para-pectorales.jpg.webp');
 
-5- Ejecuta la aplicación:
-Abre dos terminales separadas.
-
-En la primera terminal, inicia el servidor del backend (desde la carpeta corevida-backend):
+5- Ejecuta la aplicación, en una terminal el backend y en otra el frontend:
+cd corevida-backend
 node index.js
-En la segunda terminal, inicia el frontend:
+
+cd corevida-frontend
 npm run dev
 
 6- Ir a la dirección que se indica en la terminal del frontend
